@@ -59,36 +59,39 @@ class JPDemo extends JPanel implements ActionListener{
 		add(b2);
 		b2.setBackground(new Color(4,120,255));
 		
-		Font f=new Font("Bauhous 93",Font.ITALIC,30);
-		setFont(f);
+		Font f=new Font("Bauhous 93",Font.ITALIC,20);
 		
 		tx1=new JTextField("Start Game");
 		tx1.setBounds(50,230,150,35);
 		add(tx1);
 		tx1.setForeground(Color.green);
 		tx1.setBackground(Color.black);
+		tx1.setFont(f);
 		
 		tx2=new JTextField("Player 1 Name");
 		tx2.setBounds(50,300,150,35);
 		add(tx2);
 		tx2.setForeground(Color.green);
 		tx2.setBackground(Color.black);
+		tx2.setFont(f);
+		
 		
 		tx3=new JTextField("Player 2 Name");
 		tx3.setBounds(50,375,150,35);
 		add(tx3);
 		tx3.setForeground(Color.green);
 		tx3.setBackground(Color.black);
+		tx3.setFont(f);
 		
 		b3=new JButton("Roll");
 		b3.setBounds(50,500,100,30);
-		b3.setBackground(Color.red);
+		b3.setForeground(Color.red);
 		add(b3);
 		b3.addActionListener(this);
+		setFont(f);
 		
 		b4=new JButton(img7);
 		b4.setBounds(20,560,150,60);
-		b4.setBackground(Color.red);
 		add(b4);
 	}
 	
@@ -114,6 +117,7 @@ class JPDemo extends JPanel implements ActionListener{
 		if(e.getSource()==b3)
 		{
 		int random=(int)Math.round(Math.random()*5+1);
+		px1=140;
 		
 		switch(random)
 		{
@@ -142,7 +146,6 @@ class JPDemo extends JPanel implements ActionListener{
 			px1+=420;
 			break;
 		}
-		
 		dice1=img11.getImage();
 		repaint();
 		}
